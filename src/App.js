@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Dashboard from './components/Dashboard';
+import HeaderComponent from './components/HeaderComponent';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter as Router,Route} from 'react-router-dom';
+import addRestaurant from './components/Restaurant/addRestaurant';
+import child from './components/child';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+        <Router>
+          <div className="App">
+          <HeaderComponent/>
+      </div>
+        <Route path="/dashboard" component={Dashboard}/>
+        <Route path="/addRestaurant" component={addRestaurant}/>
+        <Route path="/addChild" component={child}/>
+      </Router>
+   
   );
 }
 
